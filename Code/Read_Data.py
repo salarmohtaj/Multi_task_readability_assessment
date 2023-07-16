@@ -15,12 +15,12 @@ print(f"The correlation coefficient between Understandability of Lexical_difficu
 df = df[['ID', 'Sentence', 'MOS_Complexity', 'MOS_Understandability', 'MOS_Lexical_difficulty']]
 print(df.columns)
 
-train, test = train_test_split(df, test_size=0.4, shuffle=True)
-test, valid = train_test_split(test, test_size=0.5, shuffle=True)
+train, test = train_test_split(df, test_size=0.4, shuffle=True, random_state=67)
+test, valid = train_test_split(test, test_size=0.5, shuffle=True, random_state=67)
 
 print(f"There are {train.shape[0]}, {valid.shape[0]}, and {test.shape[0]} instances in the train, validation and test sets, respectively.")
 
 train.to_csv("../Data/train.csv", encoding='utf-8', index=False)
 valid.to_csv("../Data/valid.csv", encoding='utf-8', index=False)
 test.to_csv("../Data/test.csv", encoding='utf-8', index=False)
-print(f"Saved in the files!")
+print(f"Saved on files!")
